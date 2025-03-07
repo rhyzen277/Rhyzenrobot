@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Predictions</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #0d0d0d;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Glowing Section */
+        .section {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(26, 26, 26, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8);
+            transition: 0.3s ease-in-out;
+        }
+
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 0px 25px rgba(255, 204, 0, 1);
+        }
+
+        .section h2 {
+            color: #ffcc00;
+            text-shadow: 0px 0px 10px #ffcc00;
+        }
+
+        /* Match Cards */
+        .match-box {
+            background-color: #222;
+            margin: 10px auto;
+            padding: 15px;
+            width: 80%;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.8);
+            transition: 0.3s;
+        }
+
+        .match-box:hover {
+            box-shadow: 0px 0px 25px rgba(0, 255, 204, 1);
+            transform: scale(1.05);
+        }
+
+        .match-box h3 {
+            color: #00ffcc;
+            text-shadow: 0px 0px 10px #00ffcc;
+        }
+
+        .odds {
+            font-size: 18px;
+            color: #ffcc00;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px #ffcc00;
+        }
+
+        /* Input Field */
+        .input-field {
+            width: 80%;
+            padding: 12px;
+            margin: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+        }
+
+        /* Glowing Button */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #ffcc00, #ff6600);
+            color: #121212;
+            padding: 12px 20px;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-decoration: none;
+            box-shadow: 0px 0px 15px #ffcc00;
+        }
+
+        .btn:hover {
+            box-shadow: 0px 0px 25px #ffcc00;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            color: #ccc;
+            padding: 20px;
+            margin-top: 30px;
+            font-size: 14px;
+            text-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+<h2 class="football-header">⚽ Free Football Predictions ⚽</h2>
+<div class="bet-brands">
+    <span class="brand-1">1xBet</span>
+    <span class="brand-2">Bet9ja</span>
+    <span class="brand-3">Betking</span>
+    <span class="brand-4">SportyBet</span>
+    <span class="brand-5">Melbet</span>
+    <span class="brand-6">Betway</span>
+    <span class="brand-7">22Bet</span>
+</div>
+
+<style>
+    .football-header {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #ffcc00;
+        text-shadow: 0px 0px 15px #ffcc00, 0px 0px 30px #ff6600;
+        padding: 10px;
+        animation: glowHeader 2s infinite alternate;
+    }
+
+    @keyframes glowHeader {
+        0% { text-shadow: 0px 0px 15px #ffcc00, 0px 0px 30px #ff6600; }
+        100% { text-shadow: 0px 0px 25px #ff6600, 0px 0px 50px #ffcc00; }
+    }
+
+    .bet-brands {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        gap: 15px;
+        animation: moveBrands 10s linear infinite;
+    }
+
+    .bet-brands span {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 5px;
+        text-transform: uppercase;
+        box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.8);
+        animation: neonGlow 1.5s infinite alternate;
+    }
+
+    .brand-1 { color: #00ffcc; text-shadow: 0px 0px 15px #00ffcc; }
+    .brand-2 { color: #ffcc00; text-shadow: 0px 0px 15px #ffcc00; }
+    .brand-3 { color: #ff6600; text-shadow: 0px 0px 15px #ff6600; }
+    .brand-4 { color: #ff00ff; text-shadow: 0px 0px 15px #ff00ff; }
+    .brand-5 { color: #ff3333; text-shadow: 0px 0px 15px #ff3333; }
+    .brand-6 { color: #00ff00; text-shadow: 0px 0px 15px #00ff00; }
+    .brand-7 { color: #3399ff; text-shadow: 0px 0px 15px #3399ff; }
+
+    @keyframes neonGlow {
+        0% { opacity: 1; }
+        100% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    @keyframes moveBrands {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+</style>
+
+    <!-- Today's Predictions -->
+    <div class="section">
+        <h2>🔥 Today's Predictions 🔥</h2>
+        <input type="text" class="input-field" placeholder="EUROPA LEAGUES">
+        <div class="match-box">
+            <h3>AZ ALKMAAR 🆚 TOTTENHAM HOTSPUR</h3>
+            <p>👉 Prediction: OVER 4.5 SAVES</p>
+            <p class="odds">🔥 Odds: 1.26</p>
+            <br>
+
+            <h3>FCSB 🆚 LYON</h3>
+            <p>👉 Prediction: X2</p>
+            <p class="odds">🔥 Odds: 1.263</p><br>
+
+            <h3>Fenerbahce 🆚 Rangers</h3>
+            <p>👉 Prediction: team 1 to qualify to next stage</p>
+            <p class="odds">🔥 Odds: 1.57</p><br>
+
+            <h3>Real Sociedad 🆚  Manchester United</h3>
+            <p>👉 Prediction: X2</p>
+            <p class="odds">🔥 Odds: 1.736</p><br>
+
+            <p class="odds">🔥 Total Odds: 4+</p><br>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- Live Predictions -->
+    <div class="section">
+        <h2>📢 Live Match Predictions</h2>
+        <div class="match-box">
+            <h3>= 🆚 =</h3>
+            <p>👉 Prediction: COME BACK TOMORROW</p>
+            <p class="odds">🔥 Odds: 2.00</p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Yellow Cards Section -->
+    <div class="section">
+        <h2>🟨 Yellow Cards Predictions</h2>
+        <div class="match-box">
+            <p class="odds">🔥 saudi arabia pro league</p>
+            <h3>AL KHOLOOD 🆚 AL-FATEH AL-AHSA</h3>
+            <p>👉 Prediction: UNDER 5.5 Yellow Cards</p>
+            <p class="odds">🔥 Odds: 1.33</p><br>
+
+
+            <p class="odds">🔥 EUROPA LEAGUE</p>
+            <h3>AZ ALKMAAR 🆚 TOTTENHAM HOTSPUR</h3>
+            <p>👉 Prediction: OVER 2.5 Yellow Cards</p>
+            <p class="odds">🔥 Odds: 1.31</p><BR>
+
+
+
+             <p class="odds">🔥 EUROPA LEAGUE</p>
+            <h3>VIKTORIA PLZEN 🆚 LAZIO</h3>
+            <p>👉 Prediction: OVER 2.5 Yellow Cards</p>
+            <p class="odds">🔥 Odds: 1.188</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Corners Section -->
+    <div class="section">
+        <h2>🔻 Corners Predictions</h2>
+        <div class="match-box">
+            <h3>REAL SOCIEDAD 🆚 MANCHESTER UNITED</h3>
+            <p>👉 Prediction: TOTAL 2 OVER 2.5 CORNERS IN FULL MATCH</p>
+            <p class="odds">🔥 Odds: 1.27</p>
+        </div>
+    </div>
+
+    <!-- Must Win Bet -->
+    <div class="section">
+        <h2>🔥 A Must-Win Bet</h2>
+        <div class="match-box">
+            <h3>AZ ALKMAAR 🆚 TOTTENHAM HOTSPUR</h3>
+            <p>👉 Prediction: SHORT TOWARDS THE GOAL (ONLY ON 1XBET AND SIMILAR PLATFORM HAS THIS OPTION) OVER 22.5</p>
+            <p class="odds">🔥 Odds: 1.407</p>
+        </div>
+    </div>
+
+    <!-- Other Bets -->
+    <div class="section">
+        <h2>📌 Other Betting Markets</h2>
+        <p>👉 GOAL KICK ✅ OVER 11.5 AJAX VS EINTRACHT FRAN</p>
+        <p>👉 Over 1.5  GOAL ✅AJAX VS EINTRACHT FRAN</p>
+        <p>👉 UNDER 8.5  ✅SHORT ON TARGET</p> REAL SOCIEDAD VS MAN U
+        <p>👉 OVER 2.5  ✅OFFSIDE</p>REAL SOCIEDAD VS MAN U
+    </div>
+
+    <!-- VIP Predictions -->
+    <div class="section">
+        <a href="vip.html" class="btn">🔒 Get VIP Predictions</a>
+    </div>
+
+    <footer style="background: #111; color: cyan; text-align: center; padding: 15px; font-size: 14px; box-shadow: 0 0 10px cyan;">
+    <p>📧 Contact Us: 
+        <a href="mailto:team.competentraders@gmail.com" style="color: lime; text-decoration: none;">team.competentraders@gmail.com</a> | 
+        <a href="mailto:competentraders@gmail.com" style="color: lime; text-decoration: none;">competentraders@gmail.com</a>
+    </p>
+    <p>© 2025 <strong>@CompetentTraders</strong> | Bet Responsibly ✅</p>
+</footer>
+
+</body>
+</html>
