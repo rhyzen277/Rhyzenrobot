@@ -11,11 +11,6 @@
             100% { text-shadow: 0 0 5px cyan, 0 0 10px cyan; }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
         body {
             font-family: Arial, sans-serif;
             background-color: #000;
@@ -62,21 +57,19 @@
             box-shadow: 0 0 15px cyan;
         }
 
+        /* MODAL STYLING */
         .modal {
             display: none;
             position: fixed;
-            top: 10px; /* Moved to top */
-            left: 50%;
-            transform: translate(-50%, 0);
+            top: 10%;
+            left: 5%;
             background: #111;
-            padding: 20px;
+            padding: 15px;
             width: 85%;
-            max-width: 350px;
+            max-width: 280px;
             border-radius: 10px;
             box-shadow: 0 0 20px cyan;
             text-align: center;
-            animation: float 2s infinite alternate;
-            z-index: 1000;
         }
 
         .modal h3 {
@@ -86,59 +79,33 @@
 
         .modal p {
             font-size: 14px;
-            margin: 8px 0;
+            margin: 6px 0;
         }
 
-        .locked {
-            background: #444;
-            color: cyan;
-            padding: 8px;
-            font-weight: bold;
-            border-radius: 5px;
-            display: inline-block;
-            cursor: default;
-            text-shadow: 0 0 5px red;
-        }
-
-        .hidden-details {
+        .crypto-address {
             background: #222;
-            color: #222;
-            padding: 8px;
-            font-weight: bold;
+            color: cyan;
+            padding: 5px;
+            font-size: 12px;
             border-radius: 5px;
-            display: inline-block;
-            cursor: pointer;
-            transition: 0.3s;
+            word-break: break-word;
         }
 
-        .hidden-details:hover {
+        .paid-btn, .close-btn {
             background: cyan;
             color: #000;
-        }
-
-        .copy-btn, .paid-btn, .close {
-            display: block;
-            width: 100%;
-            background: cyan;
-            color: #000;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 8px;
+            margin: 8px;
             border: none;
             cursor: pointer;
             font-weight: bold;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 12px;
             transition: 0.3s;
         }
 
-        .paid-btn:hover, .close:hover {
-            background: lime;
-        }
-
-        .close {
-            background: red;
-            color: white;
-        }
+        .paid-btn:hover { background: lime; }
+        .close-btn:hover { background: red; color: white; }
     </style>
 </head>
 <body>
@@ -153,29 +120,49 @@
         <div class="plan" onclick="showModal('Daily Plan', 1500)">🔒 ₦1,500 Daily VIP</div>
         <div class="plan" onclick="showModal('Weekly Plan', 5000)">🔒 ₦5,000 Weekly VIP</div>
         <div class="plan" onclick="showModal('Monthly Plan', 10000)">🔒 ₦10,000 Monthly VIP</div>
-        <div class="plan" onclick="showModal('Yearly Plan', 100000)">🔒 ₦100,000 Yearly VIP</div>
+        <div class="plan" onclick="showModal('Yearly Plan', 100000)">🔒 ₦100,000 Yearly VIP</div><br>
+        <p class="robot-text">🤖 We utilize advanced AI-powered robots for market predictions, ensuring a 98% accuracy rate! 🚀</p>
+
+<style>
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px cyan, 0 0 10px cyan; }
+    50% { text-shadow: 0 0 20px cyan, 0 0 40px cyan; }
+    100% { text-shadow: 0 0 5px cyan, 0 0 10px cyan; }
+}
+
+.robot-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: cyan;
+    text-align: center;
+    animation: neonGlow 2s infinite alternate;
+    margin-top: 15px;
+}
+</style>
     </div>
 
-    <!-- MODAL FOR PLANS -->
+    <!-- MODAL -->
     <div id="vipModal" class="modal">
         <h3 id="modalTitle">VIP Plan</h3>
+        <p><strong>This is the world of cryptocurrency! 💰</strong></p>
+        <p>We accept only crypto payments. Send proof via the **I Have Paid** button for manual confirmation.</p>
         
-        <p><span class="locked">🔒 Over 2.5 Goals</span></p>
-        <p><span class="locked">🔒 Win/Draw/Win</span></p>
-        <p><span class="locked">🔒 Correct Score</span></p>
-        <p><span class="locked">🔒 Handicap Bet</span></p>
+        <h3>💳 Crypto Payment Options:</h3>
 
-        <h3>💳 Payment Options</h3>
-        <p><strong>Bank Transfer</strong></p>
-        <p>Account Number: <span id="accNumber" class="hidden-details" onclick="revealDetails('accNumber')">Click to Reveal</span></p>
-        <p>Bank Name: <span id="bankName" class="hidden-details" onclick="revealDetails('bankName')">Click to Reveal</span></p>
-        <p>Account Name: <span id="accName" class="hidden-details" onclick="revealDetails('accName')">Click to Reveal</span></p>
+        <p><strong>USDT (TRC20):</strong></p>
+        <p class="crypto-address">TB4YyUMmFV8NK1GqZyWkENNPAkPbDf7sCv</p>
 
-        <h3>💰 Cryptocurrency Payment</h3>
-        <p>USDT Wallet Address (TRC20): <span id="cryptoAddress" class="hidden-details" onclick="revealDetails('cryptoAddress')">Click to Reveal</span></p>
+        <p><strong>PI (Network PI):</strong></p>
+        <p class="crypto-address">MDJYPX7HSZ5XZYNBJIWV6KCVV6RGMCDUBH3FTJL22TOGPNFQI6LN2AAAAAAAACYE4UUN4</p>
+
+        <p><strong>Solana (Network Solana):</strong></p>
+        <p class="crypto-address">DY7TRoEk7pPD5mmuvNKgExAYb9HJHu4Sn9twjB53pxXJ</p>
+
+        <p><strong>Bitcoin (Network Bitcoin):</strong></p>
+        <p class="crypto-address">3BfoU2qv6ytuAb6XFQGxwUBUJETaV75hEi</p>
 
         <button class="paid-btn" onclick="sendConfirmation()">✅ I Have Paid</button>
-        <button class="close" onclick="closeModal()">❌ Close</button>
+        <button class="close-btn" onclick="closeModal()">❌ Close</button>
     </div>
 
     <script>
@@ -188,30 +175,10 @@
             document.getElementById('vipModal').style.display = 'none';
         }
 
-        function revealDetails(id) {
-            let details = {
-                accNumber: "9025133217",
-                bankName: "OPay",
-                accName: "Ugbesia Godswill",
-                cryptoAddress: "TB4YyUMmFV8NK1GqZyWkENNPAkPbDf7sCv"
-            };
-            document.getElementById(id).textContent = details[id];
-            document.getElementById(id).style.background = "lime";
-            document.getElementById(id).style.color = "#000";
-        }
-
         function sendConfirmation() {
-            window.open("https://wa.me/message/46YQCTP6Y4PTK1?text=I have paid for VIP Predictions. Please confirm.", "_blank");
+            window.location.href = "mailto:competentraders@gmail.com?subject=VIP Payment Confirmation&body=Hello, I have made payment for the VIP plan. Please confirm my access.";
         }
-    </script><br>
-
-    <footer style="background: #111; color: cyan; text-align: center; padding: 15px; font-size: 14px; box-shadow: 0 0 10px cyan;">
-    <p>📧 Contact Us: 
-        <a href="mailto:team.competentraders@gmail.com" style="color: lime; text-decoration: none;">team.competentraders@gmail.com</a> | 
-        <a href="mailto:competentraders@gmail.com" style="color: lime; text-decoration: none;">competentraders@gmail.com</a>
-    </p>
-    <p>© 2025 <strong>@CompetentTraders</strong> | Bet Responsibly ✅</p>
-</footer>
+    </script>
 
 </body>
 </html>
