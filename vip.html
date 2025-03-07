@@ -140,13 +140,16 @@
 }
 </style>
     </div>
-
     <!-- MODAL -->
     <div id="vipModal" class="modal">
+        <div style="background: black; color: white; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px cyan; text-align: center;">
+    <h3 style="color: cyan; text-shadow: 0 0 5px cyan;">Bank Payment Details</h3>
+    <p><strong>Bank Name:</strong> Opay</p>
+    <p><strong>Account Number:</strong> 9025133217</p>
+    <p><strong>Account Name:</strong> Ugbesia Godswill</p>
+    <p><strong>Account Type:</strong> Savings</p>
+</div>
         <h3 id="modalTitle">VIP Plan</h3>
-        <p><strong>This is the world of cryptocurrency! 💰</strong></p>
-        <p>We accept only crypto payments. Send proof via the **I Have Paid** button for manual confirmation.</p>
-        
         <h3>💳 Crypto Payment Options:</h3>
 
         <p><strong>USDT (TRC20):</strong></p>
@@ -155,11 +158,6 @@
         <p><strong>PI (Network PI):</strong></p>
         <p class="crypto-address">MDJYPX7HSZ5XZYNBJIWV6KCVV6RGMCDUBH3FTJL22TOGPNFQI6LN2AAAAAAAACYE4UUN4</p>
 
-        <p><strong>Solana (Network Solana):</strong></p>
-        <p class="crypto-address">DY7TRoEk7pPD5mmuvNKgExAYb9HJHu4Sn9twjB53pxXJ</p>
-
-        <p><strong>Bitcoin (Network Bitcoin):</strong></p>
-        <p class="crypto-address">3BfoU2qv6ytuAb6XFQGxwUBUJETaV75hEi</p>
 
         <button class="paid-btn" onclick="sendConfirmation()">✅ I Have Paid</button>
         <button class="close-btn" onclick="closeModal()">❌ Close</button>
@@ -176,7 +174,7 @@
         }
 
         function sendConfirmation() {
-            window.location.href = "mailto:competentraders@gmail.com?subject=VIP Payment Confirmation&body=Hello, I have made payment for the VIP plan. Please confirm my access.";
+            window.location.href = "mailto:mon9predictz@gmail.com?subject=VIP Payment Confirmation&body=Hello, I have made payment for the VIP plan. Please confirm my access.";
         }
     </script>
 
